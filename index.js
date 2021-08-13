@@ -202,6 +202,7 @@ function getAllMoviesReleasedAtOrBeforeYear(movies, year) {
  */
 function getBiggestBoxOfficeMovie(movies) {
   let assumedAmount=0;
+  let highestmovieName = "";
   for (let i=0; i<movies.length; i++) {
     let totalInStringArr = movies[i].boxOffice.split("");
     totalInStringArr.shift();
