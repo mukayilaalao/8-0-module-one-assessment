@@ -200,7 +200,20 @@ function getAllMoviesReleasedAtOrBeforeYear(movies, year) {
  *  getBiggestBoxOfficeMovie(movies);
  *  //> "Incredibles 2"
  */
-function getBiggestBoxOfficeMovie() {}
+function getBiggestBoxOfficeMovie(movies) {
+  let assumedAmount=0;
+  for (let i=0; i<movies.length; i++) {
+    let totalInStringArr = movies[i].boxOffice.split("");
+    totalInStringArr.shift();
+    let total = totalInStringArr.join("");
+    total = Number(total.split(",").join(""));
+    if(total > assumedAmount) {
+      assumedAmount = total;
+      highestmovieName = movies[i].title;
+    }
+  }
+  return !movies.length? null:highestmovieName;
+}
 
 // Do not change anything below this line.
 module.exports = {
