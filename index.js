@@ -52,7 +52,7 @@ function getHighestMetascore(movies) {
     return 0;
   }
   let highestMetascore = Number(movies[0].metascore);
-  for (let i=0; i<movies.length; i++) {
+  for (let i=1; i<movies.length; i++) {
     if(Number(movies[i].metascore) > highestMetascore) {
       highestMetascore = Number(movies[i].metascore);
     }
